@@ -21,8 +21,6 @@ const element =
     score: document.querySelector('#score'),
     second: document.querySelector('#second'),
     JingleBellsSound: document.querySelector('#jb-sound'),
-    plusSound: document.querySelector('#plus-sound'),
-    minusSound: document.querySelector('#minus-sound'),
     gameoverSound: document.querySelector('#go-sound'),
 }
 
@@ -747,15 +745,11 @@ const func =
                             )
                             {
                                 game.score++
-                                element.plusSound.currentTime = 0
-                                element.plusSound.play()
                             }
                             // 違う色だった
                             else
                             {
                                 game.score--
-                                element.minusSound.currentTime = 0
-                                element.minusSound.play()
                                 if(game.score < 0) game.score = 0
                             }
                         }
