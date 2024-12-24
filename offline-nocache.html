@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta
+            name="viewport"
+            content="width=device-width,user-scalable=no">
+        <title>Offline & No Cache - Kitoone Santa</title>
+	    <link href="./icon.png" rel="icon">
+	    <link href="./style.css" rel="stylesheet">
+        <link href="./manifest.json" rel="manifest">
+        <link href="./apple-touch-icon.png" rel="apple-touch-icon">
+    </head>
+    <body>
+        <h1>Offline & No Cache - Kitoone Santa</h1>
+        <p>
+            現在オフラインで、
+            かつ残っているキャッシュのページがありません。
+            オンライン状態で読み込んでくだされば、
+            次回からはオフラインでも利用できます。
+        </p>
+        <script defer>
+            if('serviceWorker' in navigator)
+            {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('./service-worker.js').catch((err) => {
+                        console.error('Service Worker registration was failed: ', err)
+                    })
+                })
+            }
+        </script>
+    </body>
+</html>

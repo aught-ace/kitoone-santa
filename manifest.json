@@ -1,0 +1,34 @@
+{
+    "short_name": "Kitoone Santa",
+    "name": "Kitoone Santa",
+    "id": "kitoone-santa",
+    "version": "1.0.1",
+    "description": "キツネのサンタさん。",
+    "theme_color": "#FFCCCC",
+    "background_color": "#FFFFCC",
+    "display": "fullscreen",
+    "start_url": "index.html",
+    "icons":
+    [
+        {
+            "src": "./image/icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "./image/screenshot-narrow.png",
+            "type": "image/png",
+            "sizes": "512x1024",
+            "form_factor": "narrow"
+        },
+        {
+            "src": "./image/screenshot-wide.png",
+            "type": "image/png",
+            "sizes": "1024x512",
+            "form_factor": "wide"
+        }
+    ],
+    "manifest_version": "2"
+}

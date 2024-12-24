@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,user-scalable=no">
+        <meta name="theme-color" content="#FFCCCC">
+        <!--meta name="theme-color" content="#FFCCCC" media="(prefers-color-scheme: light)">
+        <meta name="theme-color" content="#330000" media="(prefers-color-scheme: dark)"-->
+        <title>Kitoone Santa</title>
+	    <link href="./image/icon.png" rel="icon">
+        <link href="./image/apple-touch-icon.png" rel="apple-touch-icon">
+	    <link href="./style.css" rel="stylesheet">
+        <link href="./manifest.json" rel="manifest">
+    </head>
+    <body>
+        <div id="main">
+            <div id="screen">
+                <div id="version"></div>
+                <canvas id="canvas" width="512" height="512"></canvas>
+                <div id="second"></div>
+                <div id="state"></div>
+                <div id="score"></div>
+            </div>
+            <div id="red" class="button">J</div>
+            <div id="green" class="button">K</div>
+            <div id="blue" class="button">L</div>
+            <div id="jump" class="button">Space</div>
+            <div id="mode"></div>
+        </div>
+
+        <audio id="jb-sound" class="none" preload="auto" loop src="./sound/jb.wav"></audio>
+        <audio id="plus-sound" class="none" preload="auto" src="./sound/posi.wav"></audio>
+        <audio id="minus-sound" class="none" preload="auto" src="./sound/nega.wav"></audio>
+        <audio id="go-sound" class="none" preload="auto" src="./sound/go.wav"></audio>
+
+        <script src="./renderer.js" type="module" defer></script>
+        <script src="./main.js" type="module" defer></script>
+    </body>
+</html>

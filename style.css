@@ -1,0 +1,341 @@
+/* 2/1よりも横長 */
+@media (max-aspect-ratio: 2/1) and (orientation: landscape)
+{
+    #main
+    {
+        width: 100svw;
+        height: 50svw;
+        left: 0;
+        top: 0;
+        font-size: calc(50svw / 32);
+    }
+}
+/* 2/1よりも縦長 */
+@media (min-aspect-ratio: 2/1) and (orientation: landscape)
+{
+    #main
+    {
+        width: 200svh;
+        height: 100svh;
+        left: calc(50svw - 100svh);
+        top: 0;
+        font-size: calc(100svh / 32);
+    }
+}
+/* 1/2よりも横長 */
+@media (max-aspect-ratio: 1/2) and (orientation: portrait)
+{
+    #main
+    {
+        width: 100svw;
+        height: 200svw;
+        left: 0;
+        top: 0;
+        font-size: calc(200svw / 64);
+    }
+}
+/* 1/2よりも縦長 */
+@media (min-aspect-ratio: 1/2) and (orientation: portrait)
+{
+    #main
+    {
+        width: 50svh;
+        height: 100svh;
+        left: calc(50svw - 25svh);
+        top: 0;
+        font-size: calc(100svh / 64);
+    }
+}
+
+/* 縦画面の場合の各位置 */
+@media (orientation: portrait)
+{
+    #main
+    {
+        grid-template-columns: repeat(16, 1fr);
+        grid-template-rows: repeat(32, 1fr);
+    }
+    #screen
+    {
+        grid-column: 1 / 17;
+        grid-row: 1 / 17;
+    }
+    #red
+    {
+        grid-column: 2 / 6;
+        grid-row: 19 / 23;
+    }
+    #green
+    {
+        grid-column: 7 / 11;
+        grid-row: 19 / 23;
+    }
+    #blue
+    {
+        grid-column: 12 / 16;
+        grid-row: 19 / 23;
+    }
+    #jump
+    {
+        grid-column: 3 / 15;
+        grid-row: 25 / 29;
+    }
+    .button
+    {
+        font-size: 2em;
+        padding: 1.5em;
+        border-radius: 2em;
+    }
+    #mode
+    {
+        grid-column: 5 / 13;
+        grid-row: 31 / 32;
+    }
+}
+
+/* 横画面の場合の各位置 */
+@media (orientation: landscape)
+{
+    #main
+    {
+        grid-template-columns: repeat(32, 1fr);
+        grid-template-rows: repeat(16, 1fr);
+    }
+    #screen
+    {
+        grid-column: 9 / 25;
+        grid-row: 1 / 17;
+    }
+    #jump
+    {
+        grid-column: 2 / 8;
+        grid-row: 7 / 11;
+    }
+    #red
+    {
+        grid-column: 27 / 31;
+        grid-row: 2 / 6;
+    }
+    #green
+    {
+        grid-column: 27 / 31;
+        grid-row: 7 / 11;
+    }
+    #blue
+    {
+        grid-column: 27 / 31;
+        grid-row: 12 / 16;
+    }
+    .button
+    {
+        font-size: 2em;
+        padding: 1.5em;
+        border-radius: 2em;
+    }
+    #mode
+    {
+        grid-column: 2 / 8;
+        grid-row: 15 / 16;
+    }
+}
+
+/* 画面 */
+#screen
+{
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    display: grid;
+}
+
+/* キャンバス */
+#canvas
+{
+    grid-column: 2 / 16;
+    grid-row: 2 / 16;
+}
+
+/* バージョン */
+#version
+{
+    grid-column: 1 / 17;
+    grid-row: 16 / 17;
+}
+
+/* 状態 */
+#state
+{
+    grid-column: 2 / 16;
+    grid-row: 13 / 14;
+}
+
+/* 秒数 */
+#second
+{
+    grid-column: 1 / 9;
+    grid-row: 1 / 2;
+}
+
+/* スコア */
+#score
+{
+    grid-column: 9 / 17;
+    grid-row: 1 / 2;
+}
+
+/* 全体のブロック */
+#main
+{
+    background-color: #FFC;
+    border-radius: 1em;
+    position: absolute;
+    display: grid;
+    z-index: 0;
+}
+
+/* キャンバス*/
+#canvas
+{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* バージョン */
+#version
+{
+    color: #630;
+    padding: 0.5em;
+    text-align: center;
+}
+
+/* モードのボタン */
+#mode
+{
+    background-color: #CC9;
+    color: #663;
+    border-radius: 1em;
+    padding: 0.5em;
+    text-align: center;
+}
+#mode.pressed
+{
+    background-color: #996;
+}
+#mode.disabled
+{
+    background-color: transparent !important;
+}
+
+/* 画面 */
+#screen
+{
+    background-color: #FC9;
+    border-radius: 1em;
+    text-align: center;
+}
+
+/* 状態 */
+#state
+{
+    color: #630;
+    font-size: 1em;
+    padding: 0.5em;
+    text-align: center;
+    z-index: 1;
+}
+
+/* 秒数 */
+#second
+{
+    color: #630;
+    font-size: 1em;
+    padding: 0.5em;
+    text-align: center;
+}
+
+/* スコア */
+#score
+{
+    color: #630;
+    font-size: 1em;
+    padding: 0.5em;
+    text-align: center;
+}
+
+/* アクションのボタン */
+#red
+{
+    background-color: #933;
+    color: #F99;
+}
+#green
+{
+    background-color: #060;
+    color: #6C6;
+}
+#blue
+{
+    background-color: #339;
+    color: #99F;
+}
+#jump
+{
+    background-color: #666;
+    color: #CCC;
+}
+.button
+{
+    text-align: center;
+}
+#red.pressed
+{
+    background-color: #C66;
+}
+#green.pressed
+{
+    background-color: #393;
+}
+#blue.pressed
+{
+    background-color: #66C;
+}
+#jump.pressed
+{
+    background-color: #999;
+}
+
+/* 全体 */
+body
+{
+    background-color: #FCC;
+    color: #000;
+    font-size: 12pt;
+}
+
+/* すべてを囲うもの */
+body,
+html
+{
+    width: 100svw;
+    height: 100svh;
+    overflow: hidden;
+    overscroll-behavior-y: none;
+}
+
+/* 全ての要素 */
+*
+{
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-family: sans-serif;
+    font-size: 1em;
+    line-height: 1em;
+    word-spacing: 0.125em;
+    box-sizing: border-box;
+    overflow: hidden;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    user-select: none;
+    outline: none;
+}
